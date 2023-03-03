@@ -36,8 +36,9 @@ import (
 )
 
 const (
-	ControllerName string = "policy-template-sync"
-	policyFmtStr   string = "policy: %s/%s"
+	ControllerName    string = "policy-template-sync"
+	policyFmtStr      string = "policy: %s/%s"
+	parentPolicyLabel string = "policy.open-cluster-management.io/policy"
 )
 
 var log = ctrl.Log.WithName(ControllerName)
@@ -351,6 +352,9 @@ func (r *PolicyReconciler) Reconcile(ctx context.Context, request reconcile.Requ
 					Kind:    policiesv1.Kind,
 				})
 				labels := tObjectUnstructured.GetLabels()
+
+				// set label to identify parent policy for this template
+				labels[parentPolicyLabel] = instance.GetName()
 
 				if labels == nil {
 					labels = map[string]string{
