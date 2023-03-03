@@ -439,6 +439,7 @@ func (r *PolicyReconciler) Reconcile(ctx context.Context, request reconcile.Requ
 
 		for _, ownerref := range eObject.GetOwnerReferences() {
 			refName = ownerref.Name
+
 			break // just get the first ownerReference, if there are any at all
 		}
 
