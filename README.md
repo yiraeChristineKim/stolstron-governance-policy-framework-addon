@@ -1,4 +1,4 @@
-[comment]: # " Copyright Contributors to the Open Cluster Management project "
+[comment]: # " Copyright Contributors to the Open Cluster Management project test "
 
 # Governance Policy Framework Addon [![KinD tests](https://github.com/stolostron/governance-policy-framework-addon/actions/workflows/kind.yml/badge.svg?branch=main&event=push)](https://github.com/stolostron/governance-policy-framework-addon/actions/workflows/kind.yml)[![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
